@@ -394,7 +394,7 @@ namespace bazededate
             Form2 dialog1 = new Form2(1);//vinclient
             dialog1.ShowDialog();
             variable1 = dialog1.variable1;
-            variable2 = dialog1.variable2;
+            variable2 = dialog1.variable2;//something
             dataGridView1.DataSource = dbContext.cauta_dupa_nume(variable1, variable2).ToList();
         }
 
