@@ -238,14 +238,6 @@ namespace bazededate
 			}
 		}
 		
-		public System.Data.Linq.Table<mecanic_nereparate> mecanic_nereparates
-		{
-			get
-			{
-				return this.GetTable<mecanic_nereparate>();
-			}
-		}
-		
 		public System.Data.Linq.Table<mecanic_view> mecanic_views
 		{
 			get
@@ -254,60 +246,12 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchvin")]
-		public ISingleResult<searchvinResult> searchvin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string vin)
+		public System.Data.Linq.Table<mecanic_nereparate> mecanic_nereparates
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vin);
-			return ((ISingleResult<searchvinResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cauta_dupa_nume")]
-		public ISingleResult<cauta_dupa_numeResult> cauta_dupa_nume([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string prenume)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume, prenume);
-			return ((ISingleResult<cauta_dupa_numeResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.toate_operatiile_masinii")]
-		public ISingleResult<toate_operatiile_masiniiResult> toate_operatiile_masinii([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string vin)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vin);
-			return ((ISingleResult<toate_operatiile_masiniiResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_fabricant")]
-		public ISingleResult<delete_fabricantResult> delete_fabricant([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string nume)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
-			return ((ISingleResult<delete_fabricantResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_supplier")]
-		public ISingleResult<delete_supplierResult> delete_supplier([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string nume)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
-			return ((ISingleResult<delete_supplierResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_piese_disponibile")]
-		public ISingleResult<search_piese_disponibileResult> search_piese_disponibile()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<search_piese_disponibileResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_piese_nume")]
-		public ISingleResult<search_piese_numeResult> search_piese_nume([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(90)")] string nume)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
-			return ((ISingleResult<search_piese_numeResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.toate_masinile")]
-		public ISingleResult<toate_masinileResult> toate_masinile()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<toate_masinileResult>)(result.ReturnValue));
+			get
+			{
+				return this.GetTable<mecanic_nereparate>();
+			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.adauga_mecanic")]
@@ -331,6 +275,27 @@ namespace bazededate
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Brevet")]
+		public int Add_Brevet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string fk_masina, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(80)")] string descriere)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fk_masina, descriere);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Client")]
+		public int Add_Client([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(80)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(80)")] string prenume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string telefon, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(20)")] string nrcard)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume, prenume, telefon, nrcard);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_fabricant")]
+		public int Add_fabricant([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(20)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(10)")] string nr_telefon)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume, nr_telefon);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.add_operatie_withoutp")]
 		public int add_operatie_withoutp([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idrepair, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> fk_mec, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(40)")] string descrier)
 		{
@@ -342,6 +307,27 @@ namespace bazededate
 		public int add_operatie_withp([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> idrepair, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> fk_mec, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(40)")] string descrier, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(90)")] string fk_piesa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> fk_supplier)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idrepair, fk_mec, descrier, fk_piesa, fk_supplier);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.add_password_")]
+		public int add_password_([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string prenume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), password, nume, prenume);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.add_password_dir_tehnic")]
+		public int add_password_dir_tehnic([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(130)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(130)")] string prenume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), password, nume, prenume);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.add_password_mecanic")]
+		public int add_password_mecanic([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string password, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string prenume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), password, nume, prenume);
 			return ((int)(result.ReturnValue));
 		}
 		
@@ -366,11 +352,60 @@ namespace bazededate
 			return ((int)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_tipmasina")]
+		public int Add_tipmasina([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(30)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Add_Vanzare")]
+		public int Add_Vanzare([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> angajat, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> proprietar, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(80)")] string nume_piesa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> amount, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> fk_supplier)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), angajat, proprietar, nume_piesa, amount, fk_supplier);
+			return ((int)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cauta_client")]
 		public ISingleResult<cauta_clientResult> cauta_client([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string prenume)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume, prenume);
 			return ((ISingleResult<cauta_clientResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cauta_dupa_nume")]
+		public ISingleResult<cauta_dupa_numeResult> cauta_dupa_nume([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(80)")] string prenume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume, prenume);
+			return ((ISingleResult<cauta_dupa_numeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_fabricant")]
+		public ISingleResult<delete_fabricantResult> delete_fabricant([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((ISingleResult<delete_fabricantResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.delete_supplier")]
+		public ISingleResult<delete_supplierResult> delete_supplier([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(40)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((ISingleResult<delete_supplierResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fabricant_dupasupplier")]
+		public ISingleResult<fabricant_dupasupplierResult> fabricant_dupasupplier([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(40)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((ISingleResult<fabricant_dupasupplierResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Masini_Nereparate")]
+		public ISingleResult<Masini_NereparateResult> Masini_Nereparate()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<Masini_NereparateResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.monit_mecanic")]
@@ -415,6 +450,20 @@ namespace bazededate
 			return ((ISingleResult<piese_vanduteResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_piese_nume")]
+		public ISingleResult<search_piese_numeResult> search_piese_nume([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(90)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((ISingleResult<search_piese_numeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.searchvin")]
+		public ISingleResult<searchvinResult> searchvin([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string vin)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vin);
+			return ((ISingleResult<searchvinResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.stergi_dispozitiv")]
 		public int stergi_dispozitiv([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id)
 		{
@@ -457,18 +506,67 @@ namespace bazededate
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.stocul_pieselor")]
-		public ISingleResult<stocul_pieselorResult> stocul_pieselor()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Stocul_pieselor")]
+		public ISingleResult<Stocul_pieselorResult> Stocul_pieselor()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<stocul_pieselorResult>)(result.ReturnValue));
+			return ((ISingleResult<Stocul_pieselorResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.toate_masinile")]
-		public ISingleResult<toate_masinileResult1> toate_masinile1()
+		public ISingleResult<toate_masinileResult> toate_masinile()
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<toate_masinileResult1>)(result.ReturnValue));
+			return ((ISingleResult<toate_masinileResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.toate_operatiile_masinii")]
+		public ISingleResult<toate_operatiile_masiniiResult> toate_operatiile_masinii([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string vin)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), vin);
+			return ((ISingleResult<toate_operatiile_masiniiResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.addtipbrevet")]
+		public int addtipbrevet([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(30)")] string tip)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tip);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.search_piese_disponibile")]
+		public ISingleResult<search_piese_disponibileResult> search_piese_disponibile()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<search_piese_disponibileResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cauta_piese_dupa_clienti")]
+		public ISingleResult<cauta_piese_dupa_clientiResult> cauta_piese_dupa_clienti([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string nume, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string prenume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume, prenume);
+			return ((ISingleResult<cauta_piese_dupa_clientiResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cauta_piese_dupa_nume")]
+		public ISingleResult<cauta_piese_dupa_numeResult> cauta_piese_dupa_nume([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((ISingleResult<cauta_piese_dupa_numeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.cauta_piese_dupa_furnizor")]
+		public ISingleResult<cauta_piese_dupa_furnizorResult> cauta_piese_dupa_furnizor([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NChar(40)")] string nume)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nume);
+			return ((ISingleResult<cauta_piese_dupa_furnizorResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.toate_piesele_vandute")]
+		public ISingleResult<toate_piesele_vanduteResult> toate_piesele_vandute()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<toate_piesele_vanduteResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -575,7 +673,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_brevet_dispozitiv", Storage="_mecanic", ThisKey="fk_mecanic", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_brevet_dispozitiv", Storage="_mecanic", ThisKey="fk_mecanic", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public mecanic mecanic
 		{
 			get
@@ -609,7 +707,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tip_brevet_brevet_dispozitiv", Storage="_tip_brevet", ThisKey="tipbrevet", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tip_brevet_brevet_dispozitiv", Storage="_tip_brevet", ThisKey="tipbrevet", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public tip_brevet tip_brevet
 		{
 			get
@@ -682,6 +780,8 @@ namespace bazededate
 		
 		private System.Nullable<int> _fk_director_tehnic;
 		
+		private string _parola;
+		
 		private EntitySet<vanzare> _vanzares;
 		
 		private EntityRef<director_tehnic> _director_tehnic;
@@ -702,6 +802,8 @@ namespace bazededate
     partial void OnsalariuChanged();
     partial void Onfk_director_tehnicChanging(System.Nullable<int> value);
     partial void Onfk_director_tehnicChanged();
+    partial void OnparolaChanging(string value);
+    partial void OnparolaChanged();
     #endregion
 		
 		public vanzator()
@@ -835,6 +937,26 @@ namespace bazededate
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_parola", DbType="NChar(40)")]
+		public string parola
+		{
+			get
+			{
+				return this._parola;
+			}
+			set
+			{
+				if ((this._parola != value))
+				{
+					this.OnparolaChanging(value);
+					this.SendPropertyChanging();
+					this._parola = value;
+					this.SendPropertyChanged("parola");
+					this.OnparolaChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="vanzator_vanzare", Storage="_vanzares", ThisKey="id", OtherKey="fk_angajat")]
 		public EntitySet<vanzare> vanzares
 		{
@@ -848,7 +970,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="director_tehnic_vanzator", Storage="_director_tehnic", ThisKey="fk_director_tehnic", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="director_tehnic_vanzator", Storage="_director_tehnic", ThisKey="fk_director_tehnic", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public director_tehnic director_tehnic
 		{
 			get
@@ -931,6 +1053,8 @@ namespace bazededate
 		
 		private System.DateTime _data_angajarii;
 		
+		private string _password;
+		
 		private EntitySet<vanzator> _vanzators;
 		
 		private EntitySet<mecanic> _mecanics;
@@ -949,6 +1073,8 @@ namespace bazededate
     partial void OnsalariuChanged();
     partial void Ondata_angajariiChanging(System.DateTime value);
     partial void Ondata_angajariiChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
     #endregion
 		
 		public director_tehnic()
@@ -1058,6 +1184,26 @@ namespace bazededate
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(40)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="director_tehnic_vanzator", Storage="_vanzators", ThisKey="id", OtherKey="fk_director_tehnic")]
 		public EntitySet<vanzator> vanzators
 		{
@@ -1137,7 +1283,7 @@ namespace bazededate
 		
 		private int _id;
 		
-		private int _brevet_necesar;
+		private System.Nullable<int> _brevet_necesar;
 		
 		private string _nume;
 		
@@ -1151,7 +1297,7 @@ namespace bazededate
     partial void OnCreated();
     partial void OnidChanging(int value);
     partial void OnidChanged();
-    partial void Onbrevet_necesarChanging(int value);
+    partial void Onbrevet_necesarChanging(System.Nullable<int> value);
     partial void Onbrevet_necesarChanged();
     partial void OnnumeChanging(string value);
     partial void OnnumeChanged();
@@ -1184,8 +1330,8 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_brevet_necesar", DbType="Int NOT NULL")]
-		public int brevet_necesar
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_brevet_necesar", DbType="Int")]
+		public System.Nullable<int> brevet_necesar
 		{
 			get
 			{
@@ -1241,7 +1387,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tip_brevet_dispozitiv", Storage="_tip_brevet", ThisKey="brevet_necesar", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tip_brevet_dispozitiv", Storage="_tip_brevet", ThisKey="brevet_necesar", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public tip_brevet tip_brevet
 		{
 			get
@@ -1268,7 +1414,7 @@ namespace bazededate
 					}
 					else
 					{
-						this._brevet_necesar = default(int);
+						this._brevet_necesar = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("tip_brevet");
 				}
@@ -1620,7 +1766,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="fabricant_masina", Storage="_fabricant", ThisKey="fk_brand", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="fabricant_masina", Storage="_fabricant", ThisKey="fk_brand", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public fabricant fabricant
 		{
 			get
@@ -1654,7 +1800,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietar_masina", Storage="_proprietar", ThisKey="fk_proprietar", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietar_masina", Storage="_proprietar", ThisKey="fk_proprietar", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public proprietar proprietar
 		{
 			get
@@ -1688,7 +1834,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tip_masina", Storage="_tip", ThisKey="fk_tip", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tip_masina", Storage="_tip", ThisKey="fk_tip", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public tip tip
 		{
 			get
@@ -1773,6 +1919,8 @@ namespace bazededate
 		
 		private System.Nullable<int> _fk_director;
 		
+		private string _password;
+		
 		private EntitySet<brevet_dispozitiv> _brevet_dispozitivs;
 		
 		private EntitySet<operatie> _operaties;
@@ -1797,6 +1945,8 @@ namespace bazededate
     partial void Ondata_angajareChanged();
     partial void Onfk_directorChanging(System.Nullable<int> value);
     partial void Onfk_directorChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
     #endregion
 		
 		public mecanic()
@@ -1828,7 +1978,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(13) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(30) NOT NULL", CanBeNull=false)]
 		public string nume
 		{
 			get
@@ -1848,7 +1998,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenume", DbType="NChar(13) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenume", DbType="NChar(30) NOT NULL", CanBeNull=false)]
 		public string prenume
 		{
 			get
@@ -1932,6 +2082,26 @@ namespace bazededate
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(40)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_brevet_dispozitiv", Storage="_brevet_dispozitivs", ThisKey="id", OtherKey="fk_mecanic")]
 		public EntitySet<brevet_dispozitiv> brevet_dispozitivs
 		{
@@ -1971,7 +2141,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="director_tehnic_mecanic", Storage="_director_tehnic", ThisKey="fk_director", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="director_tehnic_mecanic", Storage="_director_tehnic", ThisKey="fk_director", OtherKey="id", IsForeignKey=true, DeleteRule="CASCADE")]
 		public director_tehnic director_tehnic
 		{
 			get
@@ -2248,7 +2418,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_operatie", Storage="_mecanic", ThisKey="fk_mecanic", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_operatie", Storage="_mecanic", ThisKey="fk_mecanic", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public mecanic mecanic
 		{
 			get
@@ -2282,7 +2452,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="piesa_operatie", Storage="_piesa", ThisKey="fk_piesa,fk_supplier", OtherKey="nume,fk_supplier", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="piesa_operatie", Storage="_piesa", ThisKey="fk_piesa,fk_supplier", OtherKey="nume,fk_supplier", IsForeignKey=true, DeleteRule="CASCADE")]
 		public piesa piesa
 		{
 			get
@@ -2318,7 +2488,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="reparatie_operatie", Storage="_reparatie", ThisKey="fk_reparatie", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="reparatie_operatie", Storage="_reparatie", ThisKey="fk_reparatie", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public reparatie reparatie
 		{
 			get
@@ -2501,7 +2671,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_piesa", Storage="_supplier", ThisKey="fk_supplier", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="supplier_piesa", Storage="_supplier", ThisKey="fk_supplier", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public supplier supplier
 		{
 			get
@@ -2906,7 +3076,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="masina_reparatie", Storage="_masina", ThisKey="fk_masina", OtherKey="vin", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="masina_reparatie", Storage="_masina", ThisKey="fk_masina", OtherKey="vin", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public masina masina
 		{
 			get
@@ -3494,7 +3664,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dispozitiv_utilizare_dispozitiv", Storage="_dispozitiv", ThisKey="fk_dispozitiv", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="dispozitiv_utilizare_dispozitiv", Storage="_dispozitiv", ThisKey="fk_dispozitiv", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public dispozitiv dispozitiv
 		{
 			get
@@ -3528,7 +3698,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_utilizare_dispozitiv", Storage="_mecanic", ThisKey="fk_mecanic", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="mecanic_utilizare_dispozitiv", Storage="_mecanic", ThisKey="fk_mecanic", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public mecanic mecanic
 		{
 			get
@@ -3769,7 +3939,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="vanzator_vanzare", Storage="_vanzator", ThisKey="fk_angajat", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="vanzator_vanzare", Storage="_vanzator", ThisKey="fk_angajat", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public vanzator vanzator
 		{
 			get
@@ -3803,7 +3973,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="piesa_vanzare", Storage="_piesa", ThisKey="fk_nume_piesa,fk_supplier_piesa", OtherKey="nume,fk_supplier", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="piesa_vanzare", Storage="_piesa", ThisKey="fk_nume_piesa,fk_supplier_piesa", OtherKey="nume,fk_supplier", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public piesa piesa
 		{
 			get
@@ -3839,7 +4009,7 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietar_vanzare", Storage="_proprietar", ThisKey="fk_proprietar", OtherKey="id", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="proprietar_vanzare", Storage="_proprietar", ThisKey="fk_proprietar", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public proprietar proprietar
 		{
 			get
@@ -3890,123 +4060,6 @@ namespace bazededate
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mecanic_nereparate")]
-	public partial class mecanic_nereparate
-	{
-		
-		private string _vin;
-		
-		private string _tip;
-		
-		private string _culoare;
-		
-		private string _brand;
-		
-		private string _nume;
-		
-		private string _telefon;
-		
-		public mecanic_nereparate()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vin", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string vin
-		{
-			get
-			{
-				return this._vin;
-			}
-			set
-			{
-				if ((this._vin != value))
-				{
-					this._vin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="NChar(30) NOT NULL", CanBeNull=false)]
-		public string tip
-		{
-			get
-			{
-				return this._tip;
-			}
-			set
-			{
-				if ((this._tip != value))
-				{
-					this._tip = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_culoare", DbType="NChar(30)")]
-		public string culoare
-		{
-			get
-			{
-				return this._culoare;
-			}
-			set
-			{
-				if ((this._culoare != value))
-				{
-					this._culoare = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_brand", DbType="NChar(20) NOT NULL", CanBeNull=false)]
-		public string brand
-		{
-			get
-			{
-				return this._brand;
-			}
-			set
-			{
-				if ((this._brand != value))
-				{
-					this._brand = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
-		public string nume
-		{
-			get
-			{
-				return this._nume;
-			}
-			set
-			{
-				if ((this._nume != value))
-				{
-					this._nume = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(30) NOT NULL", CanBeNull=false)]
-		public string telefon
-		{
-			get
-			{
-				return this._telefon;
-			}
-			set
-			{
-				if ((this._telefon != value))
-				{
-					this._telefon = value;
-				}
 			}
 		}
 	}
@@ -4128,40 +4181,23 @@ namespace bazededate
 		}
 	}
 	
-	public partial class searchvinResult
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.mecanic_nereparate")]
+	public partial class mecanic_nereparate
 	{
 		
 		private string _vin;
 		
+		private string _tip;
+		
 		private string _culoare;
 		
-		private int _fk_tip;
-		
-		private int _fk_brand;
-		
-		private int _fk_proprietar;
-		
-		private int _id;
+		private string _brand;
 		
 		private string _nume;
 		
-		private string _prenume;
-		
 		private string _telefon;
 		
-		private string _nrcard;
-		
-		private int _id1;
-		
-		private string _nume1;
-		
-		private int _id2;
-		
-		private string _nume2;
-		
-		private string _nr_telefon;
-		
-		public searchvinResult()
+		public mecanic_nereparate()
 		{
 		}
 		
@@ -4177,6 +4213,22 @@ namespace bazededate
 				if ((this._vin != value))
 				{
 					this._vin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tip", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string tip
+		{
+			get
+			{
+				return this._tip;
+			}
+			set
+			{
+				if ((this._tip != value))
+				{
+					this._tip = value;
 				}
 			}
 		}
@@ -4197,34 +4249,102 @@ namespace bazededate
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_tip", DbType="Int NOT NULL")]
-		public int fk_tip
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_brand", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string brand
 		{
 			get
 			{
-				return this._fk_tip;
+				return this._brand;
 			}
 			set
 			{
-				if ((this._fk_tip != value))
+				if ((this._brand != value))
 				{
-					this._fk_tip = value;
+					this._brand = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_brand", DbType="Int NOT NULL")]
-		public int fk_brand
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string nume
 		{
 			get
 			{
-				return this._fk_brand;
+				return this._nume;
 			}
 			set
 			{
-				if ((this._fk_brand != value))
+				if ((this._nume != value))
 				{
-					this._fk_brand = value;
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class vezi_vanzareResult
+	{
+		
+		private int _id;
+		
+		private int _fk_angajat;
+		
+		private int _fk_proprietar;
+		
+		private string _fk_nume_piesa;
+		
+		private int _amount;
+		
+		private int _fk_supplier_piesa;
+		
+		public vezi_vanzareResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_angajat", DbType="Int NOT NULL")]
+		public int fk_angajat
+		{
+			get
+			{
+				return this._fk_angajat;
+			}
+			set
+			{
+				if ((this._fk_angajat != value))
+				{
+					this._fk_angajat = value;
 				}
 			}
 		}
@@ -4243,6 +4363,72 @@ namespace bazededate
 					this._fk_proprietar = value;
 				}
 			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_nume_piesa", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string fk_nume_piesa
+		{
+			get
+			{
+				return this._fk_nume_piesa;
+			}
+			set
+			{
+				if ((this._fk_nume_piesa != value))
+				{
+					this._fk_nume_piesa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Int NOT NULL")]
+		public int amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this._amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier_piesa", DbType="Int NOT NULL")]
+		public int fk_supplier_piesa
+		{
+			get
+			{
+				return this._fk_supplier_piesa;
+			}
+			set
+			{
+				if ((this._fk_supplier_piesa != value))
+				{
+					this._fk_supplier_piesa = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cauta_clientResult
+	{
+		
+		private int _id;
+		
+		private string _nume;
+		
+		private string _prenume;
+		
+		private string _telefon;
+		
+		private string _nrcard;
+		
+		public cauta_clientResult()
+		{
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
@@ -4321,86 +4507,6 @@ namespace bazededate
 				if ((this._nrcard != value))
 				{
 					this._nrcard = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id1", DbType="Int NOT NULL")]
-		public int id1
-		{
-			get
-			{
-				return this._id1;
-			}
-			set
-			{
-				if ((this._id1 != value))
-				{
-					this._id1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(30) NOT NULL", CanBeNull=false)]
-		public string nume1
-		{
-			get
-			{
-				return this._nume1;
-			}
-			set
-			{
-				if ((this._nume1 != value))
-				{
-					this._nume1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id2", DbType="Int NOT NULL")]
-		public int id2
-		{
-			get
-			{
-				return this._id2;
-			}
-			set
-			{
-				if ((this._id2 != value))
-				{
-					this._id2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume2", DbType="NChar(20) NOT NULL", CanBeNull=false)]
-		public string nume2
-		{
-			get
-			{
-				return this._nume2;
-			}
-			set
-			{
-				if ((this._nume2 != value))
-				{
-					this._nume2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nr_telefon", DbType="NChar(10)")]
-		public string nr_telefon
-		{
-			get
-			{
-				return this._nr_telefon;
-			}
-			set
-			{
-				if ((this._nr_telefon != value))
-				{
-					this._nr_telefon = value;
 				}
 			}
 		}
@@ -4684,176 +4790,6 @@ namespace bazededate
 		}
 	}
 	
-	public partial class toate_operatiile_masiniiResult
-	{
-		
-		private int _id;
-		
-		private int _fk_reparatie;
-		
-		private int _fk_mecanic;
-		
-		private string _descriere;
-		
-		private string _fk_piesa;
-		
-		private System.Nullable<int> _fk_supplier;
-		
-		private int _id1;
-		
-		private string _fk_masina;
-		
-		private string _descriere1;
-		
-		public toate_operatiile_masiniiResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_reparatie", DbType="Int NOT NULL")]
-		public int fk_reparatie
-		{
-			get
-			{
-				return this._fk_reparatie;
-			}
-			set
-			{
-				if ((this._fk_reparatie != value))
-				{
-					this._fk_reparatie = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_mecanic", DbType="Int NOT NULL")]
-		public int fk_mecanic
-		{
-			get
-			{
-				return this._fk_mecanic;
-			}
-			set
-			{
-				if ((this._fk_mecanic != value))
-				{
-					this._fk_mecanic = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descriere", DbType="NChar(40)")]
-		public string descriere
-		{
-			get
-			{
-				return this._descriere;
-			}
-			set
-			{
-				if ((this._descriere != value))
-				{
-					this._descriere = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_piesa", DbType="NChar(90)")]
-		public string fk_piesa
-		{
-			get
-			{
-				return this._fk_piesa;
-			}
-			set
-			{
-				if ((this._fk_piesa != value))
-				{
-					this._fk_piesa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int")]
-		public System.Nullable<int> fk_supplier
-		{
-			get
-			{
-				return this._fk_supplier;
-			}
-			set
-			{
-				if ((this._fk_supplier != value))
-				{
-					this._fk_supplier = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id1", DbType="Int NOT NULL")]
-		public int id1
-		{
-			get
-			{
-				return this._id1;
-			}
-			set
-			{
-				if ((this._id1 != value))
-				{
-					this._id1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_masina", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string fk_masina
-		{
-			get
-			{
-				return this._fk_masina;
-			}
-			set
-			{
-				if ((this._fk_masina != value))
-				{
-					this._fk_masina = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descriere1", DbType="NChar(80)")]
-		public string descriere1
-		{
-			get
-			{
-				return this._descriere1;
-			}
-			set
-			{
-				if ((this._descriere1 != value))
-				{
-					this._descriere1 = value;
-				}
-			}
-		}
-	}
-	
 	public partial class delete_fabricantResult
 	{
 		
@@ -4906,7 +4842,7 @@ namespace bazededate
 		}
 	}
 	
-	public partial class search_piese_disponibileResult
+	public partial class fabricant_dupasupplierResult
 	{
 		
 		private string _nume;
@@ -4921,7 +4857,7 @@ namespace bazededate
 		
 		private string _telefon;
 		
-		public search_piese_disponibileResult()
+		public fabricant_dupasupplierResult()
 		{
 		}
 		
@@ -5022,123 +4958,7 @@ namespace bazededate
 		}
 	}
 	
-	public partial class search_piese_numeResult
-	{
-		
-		private string _nume;
-		
-		private int _cantitate;
-		
-		private int _fk_supplier;
-		
-		private int _id;
-		
-		private string _nume1;
-		
-		private string _telefon;
-		
-		public search_piese_numeResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
-		public string nume
-		{
-			get
-			{
-				return this._nume;
-			}
-			set
-			{
-				if ((this._nume != value))
-				{
-					this._nume = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantitate", DbType="Int NOT NULL")]
-		public int cantitate
-		{
-			get
-			{
-				return this._cantitate;
-			}
-			set
-			{
-				if ((this._cantitate != value))
-				{
-					this._cantitate = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int NOT NULL")]
-		public int fk_supplier
-		{
-			get
-			{
-				return this._fk_supplier;
-			}
-			set
-			{
-				if ((this._fk_supplier != value))
-				{
-					this._fk_supplier = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(40)")]
-		public string nume1
-		{
-			get
-			{
-				return this._nume1;
-			}
-			set
-			{
-				if ((this._nume1 != value))
-				{
-					this._nume1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(40)")]
-		public string telefon
-		{
-			get
-			{
-				return this._telefon;
-			}
-			set
-			{
-				if ((this._telefon != value))
-				{
-					this._telefon = value;
-				}
-			}
-		}
-	}
-	
-	public partial class toate_masinileResult
+	public partial class Masini_NereparateResult
 	{
 		
 		private string _vin;
@@ -5151,7 +4971,7 @@ namespace bazededate
 		
 		private int _fk_proprietar;
 		
-		public toate_masinileResult()
+		public Masini_NereparateResult()
 		{
 		}
 		
@@ -5236,220 +5056,6 @@ namespace bazededate
 		}
 	}
 	
-	public partial class vezi_vanzareResult
-	{
-		
-		private int _id;
-		
-		private int _fk_angajat;
-		
-		private int _fk_proprietar;
-		
-		private string _fk_nume_piesa;
-		
-		private int _amount;
-		
-		private int _fk_supplier_piesa;
-		
-		public vezi_vanzareResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_angajat", DbType="Int NOT NULL")]
-		public int fk_angajat
-		{
-			get
-			{
-				return this._fk_angajat;
-			}
-			set
-			{
-				if ((this._fk_angajat != value))
-				{
-					this._fk_angajat = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_proprietar", DbType="Int NOT NULL")]
-		public int fk_proprietar
-		{
-			get
-			{
-				return this._fk_proprietar;
-			}
-			set
-			{
-				if ((this._fk_proprietar != value))
-				{
-					this._fk_proprietar = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_nume_piesa", DbType="NChar(90) NOT NULL", CanBeNull=false)]
-		public string fk_nume_piesa
-		{
-			get
-			{
-				return this._fk_nume_piesa;
-			}
-			set
-			{
-				if ((this._fk_nume_piesa != value))
-				{
-					this._fk_nume_piesa = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Int NOT NULL")]
-		public int amount
-		{
-			get
-			{
-				return this._amount;
-			}
-			set
-			{
-				if ((this._amount != value))
-				{
-					this._amount = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier_piesa", DbType="Int NOT NULL")]
-		public int fk_supplier_piesa
-		{
-			get
-			{
-				return this._fk_supplier_piesa;
-			}
-			set
-			{
-				if ((this._fk_supplier_piesa != value))
-				{
-					this._fk_supplier_piesa = value;
-				}
-			}
-		}
-	}
-	
-	public partial class cauta_clientResult
-	{
-		
-		private int _id;
-		
-		private string _nume;
-		
-		private string _prenume;
-		
-		private string _telefon;
-		
-		private string _nrcard;
-		
-		public cauta_clientResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
-		public string nume
-		{
-			get
-			{
-				return this._nume;
-			}
-			set
-			{
-				if ((this._nume != value))
-				{
-					this._nume = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
-		public string prenume
-		{
-			get
-			{
-				return this._prenume;
-			}
-			set
-			{
-				if ((this._prenume != value))
-				{
-					this._prenume = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(30) NOT NULL", CanBeNull=false)]
-		public string telefon
-		{
-			get
-			{
-				return this._telefon;
-			}
-			set
-			{
-				if ((this._telefon != value))
-				{
-					this._telefon = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nrcard", DbType="NChar(20)")]
-		public string nrcard
-		{
-			get
-			{
-				return this._nrcard;
-			}
-			set
-			{
-				if ((this._nrcard != value))
-				{
-					this._nrcard = value;
-				}
-			}
-		}
-	}
-	
 	public partial class monit_mecanicResult
 	{
 		
@@ -5464,6 +5070,8 @@ namespace bazededate
 		private System.DateTime _data_angajare;
 		
 		private System.Nullable<int> _fk_director;
+		
+		private string _password;
 		
 		private int _id1;
 		
@@ -5579,6 +5187,22 @@ namespace bazededate
 				if ((this._fk_director != value))
 				{
 					this._fk_director = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(40)")]
+		public string password
+		{
+			get
+			{
+				return this._password;
+			}
+			set
+			{
+				if ((this._password != value))
+				{
+					this._password = value;
 				}
 			}
 		}
@@ -5743,6 +5367,8 @@ namespace bazededate
 		
 		private System.Nullable<int> _fk_director_tehnic;
 		
+		private string _parola;
+		
 		private int _id1;
 		
 		private int _fk_angajat;
@@ -5851,6 +5477,22 @@ namespace bazededate
 				if ((this._fk_director_tehnic != value))
 				{
 					this._fk_director_tehnic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_parola", DbType="NChar(40)")]
+		public string parola
+		{
+			get
+			{
+				return this._parola;
+			}
+			set
+			{
+				if ((this._parola != value))
+				{
+					this._parola = value;
 				}
 			}
 		}
@@ -6362,7 +6004,7 @@ namespace bazededate
 		}
 	}
 	
-	public partial class stocul_pieselorResult
+	public partial class search_piese_numeResult
 	{
 		
 		private string _nume;
@@ -6371,7 +6013,13 @@ namespace bazededate
 		
 		private int _fk_supplier;
 		
-		public stocul_pieselorResult()
+		private int _id;
+		
+		private string _nume1;
+		
+		private string _telefon;
+		
+		public search_piese_numeResult()
 		{
 		}
 		
@@ -6422,9 +6070,57 @@ namespace bazededate
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(40)")]
+		public string nume1
+		{
+			get
+			{
+				return this._nume1;
+			}
+			set
+			{
+				if ((this._nume1 != value))
+				{
+					this._nume1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(40)")]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
 	}
 	
-	public partial class toate_masinileResult1
+	public partial class searchvinResult
 	{
 		
 		private string _vin;
@@ -6437,7 +6133,27 @@ namespace bazededate
 		
 		private int _fk_proprietar;
 		
-		public toate_masinileResult1()
+		private int _id;
+		
+		private string _nume;
+		
+		private string _prenume;
+		
+		private string _telefon;
+		
+		private string _nrcard;
+		
+		private int _id1;
+		
+		private string _nume1;
+		
+		private int _id2;
+		
+		private string _nume2;
+		
+		private string _nr_telefon;
+		
+		public searchvinResult()
 		{
 		}
 		
@@ -6517,6 +6233,1094 @@ namespace bazededate
 				if ((this._fk_proprietar != value))
 				{
 					this._fk_proprietar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string prenume
+		{
+			get
+			{
+				return this._prenume;
+			}
+			set
+			{
+				if ((this._prenume != value))
+				{
+					this._prenume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nrcard", DbType="NChar(20)")]
+		public string nrcard
+		{
+			get
+			{
+				return this._nrcard;
+			}
+			set
+			{
+				if ((this._nrcard != value))
+				{
+					this._nrcard = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id1", DbType="Int NOT NULL")]
+		public int id1
+		{
+			get
+			{
+				return this._id1;
+			}
+			set
+			{
+				if ((this._id1 != value))
+				{
+					this._id1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string nume1
+		{
+			get
+			{
+				return this._nume1;
+			}
+			set
+			{
+				if ((this._nume1 != value))
+				{
+					this._nume1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id2", DbType="Int NOT NULL")]
+		public int id2
+		{
+			get
+			{
+				return this._id2;
+			}
+			set
+			{
+				if ((this._id2 != value))
+				{
+					this._id2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume2", DbType="NChar(20) NOT NULL", CanBeNull=false)]
+		public string nume2
+		{
+			get
+			{
+				return this._nume2;
+			}
+			set
+			{
+				if ((this._nume2 != value))
+				{
+					this._nume2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nr_telefon", DbType="NChar(10)")]
+		public string nr_telefon
+		{
+			get
+			{
+				return this._nr_telefon;
+			}
+			set
+			{
+				if ((this._nr_telefon != value))
+				{
+					this._nr_telefon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class Stocul_pieselorResult
+	{
+		
+		private string _nume;
+		
+		private int _cantitate;
+		
+		private int _fk_supplier;
+		
+		public Stocul_pieselorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantitate", DbType="Int NOT NULL")]
+		public int cantitate
+		{
+			get
+			{
+				return this._cantitate;
+			}
+			set
+			{
+				if ((this._cantitate != value))
+				{
+					this._cantitate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int NOT NULL")]
+		public int fk_supplier
+		{
+			get
+			{
+				return this._fk_supplier;
+			}
+			set
+			{
+				if ((this._fk_supplier != value))
+				{
+					this._fk_supplier = value;
+				}
+			}
+		}
+	}
+	
+	public partial class toate_masinileResult
+	{
+		
+		private string _vin;
+		
+		private string _culoare;
+		
+		private int _fk_tip;
+		
+		private int _fk_brand;
+		
+		private int _fk_proprietar;
+		
+		public toate_masinileResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_vin", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string vin
+		{
+			get
+			{
+				return this._vin;
+			}
+			set
+			{
+				if ((this._vin != value))
+				{
+					this._vin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_culoare", DbType="NChar(30)")]
+		public string culoare
+		{
+			get
+			{
+				return this._culoare;
+			}
+			set
+			{
+				if ((this._culoare != value))
+				{
+					this._culoare = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_tip", DbType="Int NOT NULL")]
+		public int fk_tip
+		{
+			get
+			{
+				return this._fk_tip;
+			}
+			set
+			{
+				if ((this._fk_tip != value))
+				{
+					this._fk_tip = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_brand", DbType="Int NOT NULL")]
+		public int fk_brand
+		{
+			get
+			{
+				return this._fk_brand;
+			}
+			set
+			{
+				if ((this._fk_brand != value))
+				{
+					this._fk_brand = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_proprietar", DbType="Int NOT NULL")]
+		public int fk_proprietar
+		{
+			get
+			{
+				return this._fk_proprietar;
+			}
+			set
+			{
+				if ((this._fk_proprietar != value))
+				{
+					this._fk_proprietar = value;
+				}
+			}
+		}
+	}
+	
+	public partial class toate_operatiile_masiniiResult
+	{
+		
+		private int _id;
+		
+		private int _fk_reparatie;
+		
+		private int _fk_mecanic;
+		
+		private string _descriere;
+		
+		private string _fk_piesa;
+		
+		private System.Nullable<int> _fk_supplier;
+		
+		private int _id1;
+		
+		private string _fk_masina;
+		
+		private string _descriere1;
+		
+		public toate_operatiile_masiniiResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_reparatie", DbType="Int NOT NULL")]
+		public int fk_reparatie
+		{
+			get
+			{
+				return this._fk_reparatie;
+			}
+			set
+			{
+				if ((this._fk_reparatie != value))
+				{
+					this._fk_reparatie = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_mecanic", DbType="Int NOT NULL")]
+		public int fk_mecanic
+		{
+			get
+			{
+				return this._fk_mecanic;
+			}
+			set
+			{
+				if ((this._fk_mecanic != value))
+				{
+					this._fk_mecanic = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descriere", DbType="NChar(40)")]
+		public string descriere
+		{
+			get
+			{
+				return this._descriere;
+			}
+			set
+			{
+				if ((this._descriere != value))
+				{
+					this._descriere = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_piesa", DbType="NChar(90)")]
+		public string fk_piesa
+		{
+			get
+			{
+				return this._fk_piesa;
+			}
+			set
+			{
+				if ((this._fk_piesa != value))
+				{
+					this._fk_piesa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int")]
+		public System.Nullable<int> fk_supplier
+		{
+			get
+			{
+				return this._fk_supplier;
+			}
+			set
+			{
+				if ((this._fk_supplier != value))
+				{
+					this._fk_supplier = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id1", DbType="Int NOT NULL")]
+		public int id1
+		{
+			get
+			{
+				return this._id1;
+			}
+			set
+			{
+				if ((this._id1 != value))
+				{
+					this._id1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_masina", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string fk_masina
+		{
+			get
+			{
+				return this._fk_masina;
+			}
+			set
+			{
+				if ((this._fk_masina != value))
+				{
+					this._fk_masina = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_descriere1", DbType="NChar(80)")]
+		public string descriere1
+		{
+			get
+			{
+				return this._descriere1;
+			}
+			set
+			{
+				if ((this._descriere1 != value))
+				{
+					this._descriere1 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_piese_disponibileResult
+	{
+		
+		private string _nume;
+		
+		private int _cantitate;
+		
+		private int _fk_supplier;
+		
+		private System.Nullable<int> _id;
+		
+		private string _nume1;
+		
+		private string _telefon;
+		
+		public search_piese_disponibileResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantitate", DbType="Int NOT NULL")]
+		public int cantitate
+		{
+			get
+			{
+				return this._cantitate;
+			}
+			set
+			{
+				if ((this._cantitate != value))
+				{
+					this._cantitate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int NOT NULL")]
+		public int fk_supplier
+		{
+			get
+			{
+				return this._fk_supplier;
+			}
+			set
+			{
+				if ((this._fk_supplier != value))
+				{
+					this._fk_supplier = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int")]
+		public System.Nullable<int> id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(40)")]
+		public string nume1
+		{
+			get
+			{
+				return this._nume1;
+			}
+			set
+			{
+				if ((this._nume1 != value))
+				{
+					this._nume1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(40)")]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cauta_piese_dupa_clientiResult
+	{
+		
+		private string _nume;
+		
+		private int _cantitate;
+		
+		private int _fk_supplier;
+		
+		private int _id;
+		
+		private int _fk_angajat;
+		
+		private int _fk_proprietar;
+		
+		private string _fk_nume_piesa;
+		
+		private int _amount;
+		
+		private int _fk_supplier_piesa;
+		
+		private int _id1;
+		
+		private string _nume1;
+		
+		private string _prenume;
+		
+		private string _telefon;
+		
+		private string _nrcard;
+		
+		public cauta_piese_dupa_clientiResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantitate", DbType="Int NOT NULL")]
+		public int cantitate
+		{
+			get
+			{
+				return this._cantitate;
+			}
+			set
+			{
+				if ((this._cantitate != value))
+				{
+					this._cantitate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int NOT NULL")]
+		public int fk_supplier
+		{
+			get
+			{
+				return this._fk_supplier;
+			}
+			set
+			{
+				if ((this._fk_supplier != value))
+				{
+					this._fk_supplier = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_angajat", DbType="Int NOT NULL")]
+		public int fk_angajat
+		{
+			get
+			{
+				return this._fk_angajat;
+			}
+			set
+			{
+				if ((this._fk_angajat != value))
+				{
+					this._fk_angajat = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_proprietar", DbType="Int NOT NULL")]
+		public int fk_proprietar
+		{
+			get
+			{
+				return this._fk_proprietar;
+			}
+			set
+			{
+				if ((this._fk_proprietar != value))
+				{
+					this._fk_proprietar = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_nume_piesa", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string fk_nume_piesa
+		{
+			get
+			{
+				return this._fk_nume_piesa;
+			}
+			set
+			{
+				if ((this._fk_nume_piesa != value))
+				{
+					this._fk_nume_piesa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_amount", DbType="Int NOT NULL")]
+		public int amount
+		{
+			get
+			{
+				return this._amount;
+			}
+			set
+			{
+				if ((this._amount != value))
+				{
+					this._amount = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier_piesa", DbType="Int NOT NULL")]
+		public int fk_supplier_piesa
+		{
+			get
+			{
+				return this._fk_supplier_piesa;
+			}
+			set
+			{
+				if ((this._fk_supplier_piesa != value))
+				{
+					this._fk_supplier_piesa = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id1", DbType="Int NOT NULL")]
+		public int id1
+		{
+			get
+			{
+				return this._id1;
+			}
+			set
+			{
+				if ((this._id1 != value))
+				{
+					this._id1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string nume1
+		{
+			get
+			{
+				return this._nume1;
+			}
+			set
+			{
+				if ((this._nume1 != value))
+				{
+					this._nume1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prenume", DbType="NChar(80) NOT NULL", CanBeNull=false)]
+		public string prenume
+		{
+			get
+			{
+				return this._prenume;
+			}
+			set
+			{
+				if ((this._prenume != value))
+				{
+					this._prenume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nrcard", DbType="NChar(20)")]
+		public string nrcard
+		{
+			get
+			{
+				return this._nrcard;
+			}
+			set
+			{
+				if ((this._nrcard != value))
+				{
+					this._nrcard = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cauta_piese_dupa_numeResult
+	{
+		
+		private string _nume;
+		
+		private int _cantitate;
+		
+		private int _fk_supplier;
+		
+		public cauta_piese_dupa_numeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantitate", DbType="Int NOT NULL")]
+		public int cantitate
+		{
+			get
+			{
+				return this._cantitate;
+			}
+			set
+			{
+				if ((this._cantitate != value))
+				{
+					this._cantitate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int NOT NULL")]
+		public int fk_supplier
+		{
+			get
+			{
+				return this._fk_supplier;
+			}
+			set
+			{
+				if ((this._fk_supplier != value))
+				{
+					this._fk_supplier = value;
+				}
+			}
+		}
+	}
+	
+	public partial class cauta_piese_dupa_furnizorResult
+	{
+		
+		private string _nume;
+		
+		private int _cantitate;
+		
+		private int _fk_supplier;
+		
+		private int _id;
+		
+		private string _nume1;
+		
+		private string _telefon;
+		
+		public cauta_piese_dupa_furnizorResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_cantitate", DbType="Int NOT NULL")]
+		public int cantitate
+		{
+			get
+			{
+				return this._cantitate;
+			}
+			set
+			{
+				if ((this._cantitate != value))
+				{
+					this._cantitate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fk_supplier", DbType="Int NOT NULL")]
+		public int fk_supplier
+		{
+			get
+			{
+				return this._fk_supplier;
+			}
+			set
+			{
+				if ((this._fk_supplier != value))
+				{
+					this._fk_supplier = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="Int NOT NULL")]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this._id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume1", DbType="NChar(40)")]
+		public string nume1
+		{
+			get
+			{
+				return this._nume1;
+			}
+			set
+			{
+				if ((this._nume1 != value))
+				{
+					this._nume1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_telefon", DbType="NChar(40)")]
+		public string telefon
+		{
+			get
+			{
+				return this._telefon;
+			}
+			set
+			{
+				if ((this._telefon != value))
+				{
+					this._telefon = value;
+				}
+			}
+		}
+	}
+	
+	public partial class toate_piesele_vanduteResult
+	{
+		
+		private string _nume;
+		
+		private System.Nullable<int> _Column1;
+		
+		public toate_piesele_vanduteResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nume", DbType="NChar(90) NOT NULL", CanBeNull=false)]
+		public string nume
+		{
+			get
+			{
+				return this._nume;
+			}
+			set
+			{
+				if ((this._nume != value))
+				{
+					this._nume = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="", Storage="_Column1", DbType="Int")]
+		public System.Nullable<int> Column1
+		{
+			get
+			{
+				return this._Column1;
+			}
+			set
+			{
+				if ((this._Column1 != value))
+				{
+					this._Column1 = value;
 				}
 			}
 		}
